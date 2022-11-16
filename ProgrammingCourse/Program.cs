@@ -14,11 +14,13 @@ namespace ProgrammingCourse
         {
             MasodikFeladat();
             HarmadikFeladat();
+
+            Console.ReadKey();
         }
 
         private static void HarmadikFeladat()
         {
-            Console.WriteLine("3. ");
+            Console.WriteLine("3. feladat:\n\tA tanfolyamra " + kurzus.Count + " fő iratkozott be.");
         }
 
         private static void MasodikFeladat()
@@ -28,7 +30,7 @@ namespace ProgrammingCourse
                 while (!sr.EndOfStream)
                 {
                     string[] tmp = sr.ReadLine().Split(';');
-                    kurzus.Add(new Kurzus(tmp[0], Convert.ToChar(tmp[1]), Convert.ToInt32(tmp[2]), Convert.ToInt32(tmp[3]), Convert.ToInt32(tmp[4]), Convert.ToInt32(tmp[5]), Convert.ToInt32(tmp[6]), Convert.ToInt32(tmp[7])));
+                    kurzus.Add(new Kurzus(tmp[0], Convert.ToChar(tmp[1]), Convert.ToInt32(tmp[2]), tmp[3], Convert.ToInt32(tmp[4]), Convert.ToInt32(tmp[5]), Convert.ToInt32(tmp[6]), Convert.ToInt32(tmp[7])));
                 }
             }
         }

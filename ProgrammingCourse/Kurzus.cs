@@ -14,7 +14,7 @@ namespace ProgrammingCourse
 
         public int Finanszirozas { get; private set; }
 
-        public int Befizetett { get; private set; }
+        public string Befizetett { get; private set; }
 
         public int Prog { get; private set; }
 
@@ -24,7 +24,7 @@ namespace ProgrammingCourse
 
         public int Mestint { get; private set; }
 
-        public Kurzus(string neve, char neme, int finanszirozas, int befizetett, int prog, int graf, int architekt, int mestint)
+        public Kurzus(string neve, char neme, int finanszirozas, string befizetett, int prog, int graf, int architekt, int mestint)
         {
             Neve = neve;
             Neme = neme;
