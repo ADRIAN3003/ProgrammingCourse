@@ -14,11 +14,21 @@ namespace ProgrammingCourse
 
         public int Finanszirozas { get; private set; }
 
-        public string Befizetett { get; private set; }
+        public int Befizetett { get; private set; }
 
         public List<int> Szazalek { get; private set; }
 
-        public Kurzus(string neve, char neme, int finanszirozas, string befizetett, int prog, int graf, int architekt, int mestint)
+        private int honap;
+
+        public int Honap
+        {
+            get { return honap; }
+            private set { honap = 5; }
+        }
+
+
+
+        public Kurzus(string neve, char neme, int finanszirozas, int befizetett, int prog, int graf, int architekt, int mestint)
         {
             Neve = neve;
             Neme = neme;

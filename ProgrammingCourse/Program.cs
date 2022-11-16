@@ -15,8 +15,29 @@ namespace ProgrammingCourse
             MasodikFeladat();
             HarmadikFeladat();
             NegyedikFeladat();
+            OtodikFeladat();
 
             Console.ReadKey();
+        }
+
+        private static void OtodikFeladat()
+        {
+            Console.WriteLine("5. feladat:\n\tA következő diákoknak van tandíjelmaradása:");
+            foreach (var item in kurzus)
+            {
+                if (item.Finanszirozas == 0 && item.Befizetett < 2600)
+                {
+                    Console.WriteLine(item.Neve);
+                } 
+                else if (item.Finanszirozas == 1 && item.Honap * 312 < item.Befizetett)
+                {
+                    Console.WriteLine(item.Neve);
+                } 
+                else if (item.Finanszirozas == 2 && item.Honap > 10 && item.Befizetett < 4000)
+                {
+                    Console.WriteLine(item.Neve);
+                }
+            }
         }
 
         private static void NegyedikFeladat()
@@ -38,7 +59,7 @@ namespace ProgrammingCourse
                 while (!sr.EndOfStream)
                 {
                     string[] tmp = sr.ReadLine().Split(';');
-                    kurzus.Add(new Kurzus(tmp[0], Convert.ToChar(tmp[1]), Convert.ToInt32(tmp[2]), tmp[3], Convert.ToInt32(tmp[4]), Convert.ToInt32(tmp[5]), Convert.ToInt32(tmp[6]), Convert.ToInt32(tmp[7])));
+                    kurzus.Add(new Kurzus(tmp[0], Convert.ToChar(tmp[1]), Convert.ToInt32(tmp[2]), Convert.ToInt32(tmp[3].TrimStart('$')), Convert.ToInt32(tmp[4]), Convert.ToInt32(tmp[5]), Convert.ToInt32(tmp[6]), Convert.ToInt32(tmp[7])));
                 }
             }
         }
