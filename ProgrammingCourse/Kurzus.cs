@@ -16,13 +16,7 @@ namespace ProgrammingCourse
 
         public string Befizetett { get; private set; }
 
-        public int Prog { get; private set; }
-
-        public int Graf { get; private set; }
-
-        public int Architekt { get; private set; }
-
-        public int Mestint { get; private set; }
+        public List<int> Szazalek { get; private set; }
 
         public Kurzus(string neve, char neme, int finanszirozas, string befizetett, int prog, int graf, int architekt, int mestint)
         {
@@ -30,10 +24,11 @@ namespace ProgrammingCourse
             Neme = neme;
             Finanszirozas = finanszirozas;
             Befizetett = befizetett;
-            Prog = prog;
-            Graf = graf;
-            Architekt = architekt;
-            Mestint = mestint;
+            Szazalek = new List<int>();
+            Szazalek.Add(prog);
+            Szazalek.Add(graf);
+            Szazalek.Add(architekt);
+            Szazalek.Add(mestint);
         }
     }
 }

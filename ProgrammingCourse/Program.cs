@@ -14,8 +14,16 @@ namespace ProgrammingCourse
         {
             MasodikFeladat();
             HarmadikFeladat();
+            NegyedikFeladat();
 
             Console.ReadKey();
+        }
+
+        private static void NegyedikFeladat()
+        {
+            Console.WriteLine("4. feladat:");
+            Console.WriteLine("\tFiúk átlagteljesítménye: " + Math.Round(kurzus.Where(x => x.Neme == 'm').Average(y => y.Szazalek.Average()), 2) + "%");
+            Console.WriteLine("\tLányok átlagteljesítménye: " + Math.Round(kurzus.Where(x => x.Neme == 'f').Average(y => y.Szazalek.Average()), 2) + "%");
         }
 
         private static void HarmadikFeladat()
