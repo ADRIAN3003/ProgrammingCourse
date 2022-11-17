@@ -18,13 +18,7 @@ namespace ProgrammingCourse
 
         public List<int> Szazalek { get; private set; }
 
-        private int honap;
-
-        public int Honap
-        {
-            get { return honap; }
-            private set { honap = 5; }
-        }
+        public const int Honap = 5;
 
 
 

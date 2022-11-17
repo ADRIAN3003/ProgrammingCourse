@@ -27,15 +27,15 @@ namespace ProgrammingCourse
             {
                 if (item.Finanszirozas == 0 && item.Befizetett < 2600)
                 {
-                    Console.WriteLine(item.Neve);
+                    Console.WriteLine("\t" + item.Neve);
                 } 
-                else if (item.Finanszirozas == 1 && item.Honap * 312 < item.Befizetett)
+                else if (item.Finanszirozas == 1 && Kurzus.Honap * 312 > item.Befizetett)
                 {
-                    Console.WriteLine(item.Neve);
+                    Console.WriteLine("\t" + item.Neve);
                 } 
-                else if (item.Finanszirozas == 2 && item.Honap > 10 && item.Befizetett < 4000)
+                else if (item.Finanszirozas == 2 && Kurzus.Honap > 10 && item.Befizetett < 4000)
                 {
-                    Console.WriteLine(item.Neve);
+                    Console.WriteLine("\t" + item.Neve);
                 }
             }
         }
