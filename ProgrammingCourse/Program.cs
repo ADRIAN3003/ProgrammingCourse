@@ -16,8 +16,37 @@ namespace ProgrammingCourse
             HarmadikFeladat();
             NegyedikFeladat();
             OtodikFeladat();
+            HatodikFeladat();
 
             Console.ReadKey();
+        }
+
+        private static void HatodikFeladat()
+        {
+            Console.WriteLine("6. feladat:\n\tÁllásajánlatot kap:");
+            int max = 2;
+            int jelenleg = 0;
+            foreach (var item in kurzus)
+            {
+                if (item.Finanszirozas == 2 && item.Befizetett == 0)
+                {
+                    bool elert = true;
+
+                    foreach (var szazalek in item.Szazalek)
+                    {
+                        if (szazalek < 51 && jelenleg <= max)
+                        {
+                            elert = false;
+                        }
+                    }
+
+                    if (elert)
+                    {
+                        jelenleg++;
+                        Console.WriteLine("\t" + item.Neve + "\t" + item.Szazalek.Sum());
+                    }
+                }
+            }
         }
 
         private static void OtodikFeladat()
