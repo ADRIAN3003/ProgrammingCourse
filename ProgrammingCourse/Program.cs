@@ -26,7 +26,8 @@ namespace ProgrammingCourse
             Console.WriteLine("6. feladat:\n\tÁllásajánlatot kap:");
             int max = 2;
             int jelenleg = 0;
-            foreach (var item in kurzus)
+            List<Kurzus> kurzusOrdered = kurzus.OrderByDescending(x => x.Szazalek.Sum()).ToList();
+            foreach (var item in kurzusOrdered)
             {
                 if (item.Finanszirozas == 2 && item.Befizetett == 0)
                 {
